@@ -10,15 +10,17 @@
     }
 
     &__form {
-        display: flex;
-        align-items: center;
+        display: grid;
+        grid-template-columns: 225px 216px 161px;
+        grid-template-rows: 65px;
+        column-gap: 15px;
         justify-content: center;
         margin-top: 70px;
     }
 
     &__input {
-        margin-right: 15px;
-        padding: 22px 0 22px 10px;
+        
+        padding-left: 22px;
         opacity: 0.5;
         border-radius: 3px;
         border: solid 1px #fff;
