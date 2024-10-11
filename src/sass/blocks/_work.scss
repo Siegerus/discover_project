@@ -1,0 +1,60 @@
+.work {
+    padding: 100px 0 98px 0;
+    background: url("../../img/work_bg.png") center / 2000px 1700px no-repeat;
+    background-color: #191b29;
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 268px);
+        grid-template-rows: 1fr;
+        grid-auto-rows: auto;
+        column-gap: 35px;
+        margin-top: 75px;
+        
+    }
+
+    &__item {
+        &-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+            img {
+                max-width: 112px;
+                min-height: 97px;
+            }
+        }
+
+        &-title {
+            margin-top: 35px;
+            font-size: 30px;
+            font-weight: 600;
+            text-align: center;
+            color: #fff;
+        }
+
+        &-descr {
+            margin-top: 27px;
+            opacity: 0.5;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.88;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+        }
+    }
+
+    &__button {
+        width: 228px;
+        margin: 84px auto 0 auto ;
+        padding: 22px 0 22px 0;
+        border-radius: 3px;
+        background-color: #ffd800;
+        font-size: 18px;
+        font-weight: 600;
+        color: #181a26;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+}

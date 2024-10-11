@@ -1,0 +1,29 @@
+@import "libs/normalize";
+@import "libs/fonts";
+
+@import "main/mixins";
+@import "main/variables";
+
+* {
+    font-family: "Roboto", sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+.container {
+    width: 1179px;
+    margin: 0 auto;
+}
+
+@import "blocks/promo";
+@import "blocks/header";
+@import "blocks/services";
+@import "blocks/team";
+@import "blocks/macBook";
+@import "blocks/work";
+@import "blocks/footer";
+@import "blocks/title";

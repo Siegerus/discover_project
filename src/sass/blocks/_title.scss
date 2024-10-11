@@ -1,0 +1,33 @@
+.title {
+    font-size: 60px;
+    font-weight: 100;
+    color: #fff;
+    line-height: 63px;
+    letter-spacing: -1.5px;
+    text-align: center;
+
+    &__span {
+        font-weight: 500;
+
+        &_fz36 {
+            font-size: 36px;
+        }
+
+        &_bold {
+            font-weight: 600;
+        }
+
+    }
+
+    &_black {
+        color: #191b29;
+    }
+
+    &_lh40 {
+        line-height: 40px;
+    }
+
+    &_lsnorm {
+        letter-spacing: normal;
+    }
+}

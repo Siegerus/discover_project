@@ -1,0 +1,56 @@
+.macBook {
+    position: relative;
+    padding-bottom: 181px;
+
+    &__yellow {
+        width: 100%;
+        padding-top: 66px;
+        padding-bottom: 70px;
+        background-color: #ffe347;
+    }
+
+    &__white {
+        width: 100%;
+        padding-top: 85px;
+    }
+
+    &__item {
+        width: 497px;
+    }
+
+    &__title {
+        font-size: 30px;
+        font-weight: 600;
+        color: #191b29;
+    }
+
+    &__descr {
+        margin-top: 10px;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 30px;
+        text-align: left;
+        color: #191b29;
+    }
+
+    &__button {
+        width: 228px;
+        margin-top: 42px;
+        padding: 22px 0 22px 0;
+        border-radius: 3px;
+        background-color: #191b29;
+        font-size: 18px;
+        font-weight: 600;
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    &__img {
+        position: absolute;
+        top: -10px;
+        right: 0;
+        width: 1189px;
+        height: 894px;
+    }
+}
