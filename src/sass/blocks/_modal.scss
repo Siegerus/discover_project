@@ -1,25 +1,32 @@
-.promo {
-    position: relative;
-    min-height: 873px;
-    background: url("../../img/promo_bg.png") center / cover no-repeat;
+.overlay {
+    z-index: 5;
+    display: block;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0 0 0 / 56%);
+}
+
+.modal {
+    display: block;
+    position: absolute;
+    z-index: 20;
+    top: 50%;
+    left: 50%;
+    width: 610px;
+    height: 450px;
+    padding: 75px 55px;
+    transform: translate(-50%, -50%);
     background-color: #191b29;
 
-    &__line {
-        width: 100%;
-        height: 8px;
-        background-color: #ffd800;
-    }
-
     &__form {
-        display: grid;
-        grid-template-columns: 225px 216px 161px;
-        grid-template-rows: 65px;
-        column-gap: 15px;
-        justify-content: center;
-        margin-top: 70px;
+        display: flex;
+        flex-direction: column;
     }
 
     &__input {
+        margin-top: 20px;
         padding-left: 22px;
         opacity: 0.5;
         border-radius: 3px;
@@ -41,6 +48,7 @@
     }
 
     &__button {
+        margin-top: 20px;
         padding: 22px 38px 22px 40px;
         border-radius: 3px;
         border: none;

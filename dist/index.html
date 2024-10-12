@@ -11,11 +11,17 @@
         <section class="promo">
                 <div class="container">
                     <header class="header">
-                        <div class="header__logo">
+                        <a href="#" class="header__logo">
                             <div class="header__text">URANOS</div>
                             <div class="header__label">PSD</div>
+                        </a>
+                        <div class="header__hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
                         </div>
                         <nav class="header__nav">
+                            <div class="header__close">&times;</div>
                             <ul class="header__menu">
                                 <li class="header__item">Home </li>
                                 <li class="header__item header__item_active">About Us</li>
@@ -29,8 +35,8 @@
                         <span class="title__span">free PSD templates</span>
                     </h1>
                     <form action="" class="promo__form">
-                        <input placeholder="email" class="promo__input"></input>
-                        <input placeholder="password" class="promo__input"></input>
+                        <input required name="email" id="email" placeholder="email" class="promo__input"></input>
+                        <input required name="password" id="password" placeholder="password" class="promo__input"></input>
                         <button class="promo__button">register</button>
                     </form>
                 </div>
@@ -235,6 +241,18 @@
                     </div>
                 </div>
             </footer>
+            <div class="overlay">
+                <div class="modal">
+
+                    <h2 class="modal__title"><span></span></h2>
+
+                    <div class="modal__form">
+                        <input name="modal-email" id="modal-email" placeholder="email" type="text" class="modal__input">
+                        <input name="modal-password" id="modal-password" placeholder="password" type="text" class="modal__input">
+                        <button class="modal__button">register</button>
+                    </div>
+                </div>
+            </div>
         <script src="js/main.js"></script>
     </body>
 </html>
