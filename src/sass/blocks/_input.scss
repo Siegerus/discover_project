@@ -1,0 +1,25 @@
+.input {
+    padding-left: 22px;
+    opacity: 0.5;
+    border-radius: 3px;
+    border: solid 1px #fff;
+    background: transparent;
+    outline: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.6s;
+
+    &::placeholder {
+        opacity: 0.5;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    &_modal {
+        margin-bottom: 20px;
+        padding: 21px 0 21px 22px;
+    }
+}

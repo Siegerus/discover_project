@@ -11,9 +11,9 @@
         <section class="promo">
                 <div class="container">
                     <header class="header">
-                        <a href="#" class="header__logo">
-                            <div class="header__text">URANOS</div>
-                            <div class="header__label">PSD</div>
+                        <a href="#" class="logo header__logo">
+                            <div class="logo__text">URANOS</div>
+                            <div class="logo__label">PSD</div>
                         </a>
                         <div class="header__hamburger">
                             <span></span>
@@ -35,9 +35,9 @@
                         <span class="title__span">free PSD templates</span>
                     </h1>
                     <form action="" class="promo__form">
-                        <input required name="email" id="email" placeholder="email" class="promo__input"></input>
-                        <input required name="password" id="password" placeholder="password" class="promo__input"></input>
-                        <button class="promo__button">register</button>
+                        <input required name="email" id="email" placeholder="email" class="input promo__input"></input>
+                        <input required name="password" id="password" placeholder="password" class="input promo__input"></input>
+                        <button class="button promo__button">register</button>
                     </form>
                 </div>
             </section>
@@ -145,7 +145,7 @@
                                 Quisque ut erat ornare, feugiat turpis a, fringilla felis. Nulla molestie lorem et orci sagittis, et accumsan ex porta.
                             </div>
                         </div>
-                        <div class="macBook__button">DOWNLOAD NOW</div>
+                        <div class="button button_macBook macBook__button">DOWNLOAD NOW</div>
                     </div>
                 </div>
                 <div class="macBook__img"><img src="img/MacBook.png" alt="macBook"></div>
@@ -186,7 +186,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="work__button">DOWNLOAD NOW</div>  
+                    <div class="button button_work work__button">DOWNLOAD NOW</div>  
                 </div>
             </section>
             <footer class="footer">
@@ -243,13 +243,21 @@
             </footer>
             <div class="overlay">
                 <div class="modal">
-
-                    <h2 class="modal__title"><span></span></h2>
-
+                    <div class="modal__close">&times;</div>
+                    <a href="#" class="logo logo_modal  modal__logo">
+                        <div class="logo__text logo__text_modal">URANOS</div>
+                        <div class="logo__label logo__label_modal">PSD</div>
+                    </a>
                     <div class="modal__form">
-                        <input name="modal-email" id="modal-email" placeholder="email" type="text" class="modal__input">
-                        <input name="modal-password" id="modal-password" placeholder="password" type="text" class="modal__input">
-                        <button class="modal__button">register</button>
+                        <input name="modal-email" id="modal-email" placeholder="email" type="text" class="input input_modal modal__input">
+                        <input name="modal-password" id="modal-password" placeholder="password" type="text" class="input input_modal modal__input">
+                        <button class="button button_modal modal__button">register</button>
+
+                        <div class="modal__confidential">
+                            <input class="modal__hidden" id="checkbox" type="checkbox">
+                            <label class="modal__checkbox" for="checkbox"></label>
+                            <div class="modal__confidential-text">I agree to the Privacy Policy</div>
+                        </div>
                     </div>
                 </div>
             </div>

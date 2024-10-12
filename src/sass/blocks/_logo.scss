@@ -1,0 +1,44 @@
+.logo {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 205px;
+    margin-top: 5px;
+    cursor: pointer;
+
+    &_modal {
+        width: 250px;
+        margin: 0 auto 55px auto;
+    }
+
+    &__text {
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 28px;
+        color: #fff;
+
+        &_modal {
+            font-size: 45px;
+        }
+    }
+
+    &__label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        top: 7px;
+        left: 4px;
+        width: 52px;
+        height: 26px;
+        border-radius: 3px;
+        background-color: #ffd800;
+        font-size: 18px;
+        font-weight: 500;
+        color: #070b18;
+
+        &_modal {
+            
+        }
+    }
+}

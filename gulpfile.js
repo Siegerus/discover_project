@@ -43,7 +43,6 @@ gulp.task("watch", function(){
 	gulp.watch("src/img/**/*").on("all", gulp.parallel("images"));
 	gulp.watch("src/icons/**/*").on("all", gulp.parallel("icons"));
 	gulp.watch("src/fonts/**/*").on("all", gulp.parallel("fonts"));
-	gulp.watch("src/fonts/**/*").on("all", gulp.parallel("fonts"));
 });
 
 
@@ -74,7 +73,7 @@ gulp.task("icons", function() {
 });
 
 gulp.task("fonts", function() {
-	return gulp.src("src/fonts/**/*")
+	return gulp.src("src/fonts/**/*", { encoding: false })
 		.pipe(gulp.dest("dist/fonts"))
 		.pipe(browserSync.stream());
 });
@@ -102,4 +101,4 @@ gulp.task("clean", function(){
 });
 
 
-gulp.task("default", gulp.series("clean", gulp.parallel("server", "html", "styles", "scripts" , "images", "icons", "watch")));
+gulp.task("default", gulp.series("clean", gulp.parallel("server", "html", "styles", "scripts", "fonts", "images", "icons", "watch")));

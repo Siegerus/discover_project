@@ -1,0 +1,32 @@
+.button {
+    padding: 22px 38px 22px 40px;
+    border-radius: 3px;
+    border: none;
+    background-color: #ffd800;
+    font-size: 18px;
+    font-weight: 600;
+    color: #080e17;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &_macBook {
+        width: 228px;
+        margin-top: 42px;
+        padding: 22px 0 22px 0;
+        background-color: #191b29;
+        color: #fff;
+    }
+
+    &_work {
+        width: 228px;
+        margin: 84px auto 0 auto ;
+        padding: 22px 0 22px 0;
+        background-color: #ffd800;
+        color: #181a26;
+    }
+
+    &_modal {
+        margin-top: 33px;
+    }
+}
