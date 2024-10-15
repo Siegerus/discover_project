@@ -69,6 +69,23 @@
         max-width: 695px;
     }
 
+    .logo {
+        &__text {
+            &_promo {
+                font-size: 32px;
+            }
+        }
+
+        &__label {
+            &_promo {
+                left: -6px;
+                width: 47px;
+                height: 25px;
+                font-size: 16px;
+            }
+        }
+    }
+
     .header {
         &__item {
             padding: 10px 7px 10px 7px;
@@ -88,7 +105,9 @@
 
     .services {
         &__phone {
-            top: -28%; 
+            top: -36%;
+            width: 23%;
+            
         }
 
         &__wrapper {
@@ -207,7 +226,7 @@
             top: 0;
             left: -100%;
             padding: 100px 0 0 20px;
-            width: 30%;
+            width: 40%;
             height: 100vh;
             background-color: #191b29;
             transition: all 0.6s;
@@ -238,6 +257,7 @@
         padding: 120px 0 80px 0;
 
         &__phone {
+            top: -38%;
             width: 30%;
         }
 
@@ -348,6 +368,15 @@
             &-text {
                 font-size: 18px;
             }
+        }
+
+        &__message {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        &__close {
+            top: 0;
         }
     }
 

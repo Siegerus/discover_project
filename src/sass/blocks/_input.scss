@@ -15,8 +15,15 @@
         color: #fff;
         font-size: 18px;
         font-weight: 600;
-        text-transform: uppercase;
+        text-transform: uppercase; 
+        transition: all 0.6s;
     }
+
+    &:focus {
+        &::placeholder {
+            color: transparent; 
+        }  
+    } 
 
     &_modal {
         margin-bottom: 20px;

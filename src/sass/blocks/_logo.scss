@@ -2,13 +2,14 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    width: 205px;
+    width: 225px;
     margin-top: 5px;
     cursor: pointer;
 
     &_modal {
-        width: 250px;
+        width: 275px;
         margin: 0 auto 55px auto;
+        cursor: unset;
     }
 
     &__text {

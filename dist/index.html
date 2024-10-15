@@ -8,35 +8,37 @@
 </head>
     <body>
         <div class="promo__line"></div>
+        <div class="promo__overlay animation__type__fade"></div>
         <section class="promo">
                 <div class="container">
                     <header class="header">
                         <a href="#" class="logo header__logo">
-                            <div class="logo__text">URANOS</div>
-                            <div class="logo__label">PSD</div>
+                            <div class="logo__text logo__text_promo">DISCOVER</div>
+                            <div class="logo__label logo__label_promo">INC</div>
                         </a>
                         <div class="header__hamburger">
                             <span></span>
                             <span></span>
                             <span></span>
                         </div>
+                        
                         <nav class="header__nav">
                             <div class="header__close">&times;</div>
                             <ul class="header__menu">
                                 <li class="header__item">Home </li>
                                 <li class="header__item header__item_active">About Us</li>
-                                <li class="header__item">Our Team</li>
+                                <li class="header__item"><a href="#to-team">Our Team</a></li>
                                 <li class="header__item">Portfolio</li>
                                 <li class="header__item">Contact</li>
                             </ul>
                         </nav>
                     </header>
                     <h1 class="title promo__title">Discover the wold of awsome <br>
-                        <span class="title__span">free PSD templates</span>
+                        <span class="title__span">Lorem ipsum dolor sit</span>
                     </h1>
-                    <form action="" class="promo__form">
-                        <input required name="email" id="email" placeholder="email" class="input promo__input"></input>
-                        <input required name="password" id="password" placeholder="password" class="input promo__input"></input>
+                    <form action="" id="promo-form" class="promo__form">
+                        <input required name="email" id="email" autocomplete="on" placeholder="email" class="input promo__input"></input>
+                        <input required name="password" id="password" placeholder="password" type="password" class="input promo__input"></input>
                         <button class="button promo__button">register</button>
                     </form>
                 </div>
@@ -88,7 +90,7 @@
                     </div>
                 </div>
             </section>
-            <section class="team">
+            <section id="to-team" class="team">
                 <div class="container">
                     <h2 class="title title_black title_lsnorm title_lh40">Meet our team <br>
                         <span class="title__span title__span_fz36 title__span_bold">We make this APP!</span>
@@ -145,7 +147,7 @@
                                 Quisque ut erat ornare, feugiat turpis a, fringilla felis. Nulla molestie lorem et orci sagittis, et accumsan ex porta.
                             </div>
                         </div>
-                        <div class="button button_macBook macBook__button">DOWNLOAD NOW</div>
+                        <div class="button button_macBook macBook__button j-button">DOWNLOAD NOW</div>
                     </div>
                 </div>
                 <div class="macBook__img"><img src="img/MacBook.png" alt="macBook"></div>
@@ -186,7 +188,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="button button_work work__button">DOWNLOAD NOW</div>  
+                    <div class="button button_work work__button j-button">DOWNLOAD NOW</div>  
                 </div>
             </section>
             <footer class="footer">
@@ -241,23 +243,27 @@
                     </div>
                 </div>
             </footer>
-            <div class="overlay">
-                <div class="modal">
-                    <div class="modal__close">&times;</div>
-                    <a href="#" class="logo logo_modal  modal__logo">
-                        <div class="logo__text logo__text_modal">URANOS</div>
-                        <div class="logo__label logo__label_modal">PSD</div>
-                    </a>
-                    <div class="modal__form">
-                        <input name="modal-email" id="modal-email" placeholder="email" type="text" class="input input_modal modal__input">
-                        <input name="modal-password" id="modal-password" placeholder="password" type="text" class="input input_modal modal__input">
-                        <button class="button button_modal modal__button">register</button>
-
-                        <div class="modal__confidential">
-                            <input class="modal__hidden" id="checkbox" type="checkbox">
-                            <label class="modal__checkbox" for="checkbox"></label>
-                            <div class="modal__confidential-text">I agree to the Privacy Policy</div>
+            <div class="overlay modal__overlay animation__type__fade">
+                <div class="modal__wrapper">
+                    <div class="modal__success">
+                        <div class="modal__close">&times;</div>
+                    </div>
+                    <div class="modal animation__type__fade">
+                        <div class="modal__close">&times;</div>
+                        <div href="#" class="logo logo_modal modal__logo">
+                            <div class="logo__text logo__text_modal">DISCOVER</div>
+                            <div class="logo__label logo__label_modal">INC</div>
                         </div>
+                        <form action="php/smart.php" id="modal-form" class="modal__form">
+                            <input name="email" id="modal-email" autocomplete="on" required placeholder="email" type="text" class="input input_modal modal__input">
+                            <input name="password" id="modal-password" required placeholder="password" type="password" class="input input_modal modal__input">
+                            <button  class="button button_modal modal__button">register</button>
+                            <div class="modal__confidential">
+                                <input name="policy" class="modal__hidden" required id="checkbox" type="checkbox">
+                                <label class="modal__checkbox" for="checkbox"></label>
+                                <a href="policy.html" class="modal__confidential-text">I agree to the Privacy Policy</a>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

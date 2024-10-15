@@ -9,6 +9,17 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/js/form.js":
+/*!************************!*\
+  !*** ./src/js/form.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   getForm: () => (/* binding */ getForm)\n/* harmony export */ });\nfunction getForm() {\n  window.addEventListener(\"DOMContentLoaded\", function () {\n    let message = {\n      \"loading\": \"Sending data...\",\n      \"success\": \"Thank's, we will get back to you!\",\n      \"error\": \"Something went wrong...\"\n    };\n    let formPromo = this.document.getElementById(\"promo-form\"),\n      input = Array.from(document.getElementsByTagName(\"input\")),\n      formModal = this.document.getElementById(\"modal-form\"),\n      statusMessage = this.document.createElement(\"div\"),\n      overlay = this.document.querySelector(\".modal__overlay\"),\n      modalWindow = this.document.querySelector(\".modal\"),\n      messageBox = this.document.querySelector(\".modal__success\");\n    statusMessage.classList.add(\"modal__message\");\n    let submitForm = function (form) {\n      form.addEventListener(\"submit\", function (e) {\n        e.preventDefault();\n        overlay.style.display = \"block\";\n        messageBox.style.display = \"block\";\n        modalWindow.style.display = \"none\";\n        messageBox.appendChild(statusMessage);\n        statusMessage.innerHTML = message.loading;\n        let request = new XMLHttpRequest();\n        let sendFirstRequest = function (form) {\n          let requestF = new XMLHttpRequest();\n          requestF.open(\"POST\", \"../php/telegram/telegram.php\", true);\n          let formData = new FormData(form);\n          requestF.send(formData);\n        };\n        sendFirstRequest(form);\n        let sendSecondRequest = function (form) {\n          let requestS = new XMLHttpRequest();\n          requestS.open(\"POST\", \"../php/smart.php\", true);\n          let formData = new FormData(form);\n          requestS.send(formData);\n        };\n        sendSecondRequest(form);\n\n        /* request.open(\"POST\", \"../php/telegram/telegram.php\"); */\n        /* request.open(\"POST\", \"../php/smart.php\"); */\n\n        /* let formData = new FormData(form);\r\n        request.send(formData); */\n\n        /* let submitMultiple = function(form) {\r\n            request.open(\"POST\", \"../php/smart.php\");\r\n            let formData = new FormData(form);\r\n            request.send(formData);\r\n                  } */\n\n        request.addEventListener(\"readystatechange\", function () {\n          if (request.readyState < 4) {\n            statusMessage.innerHTML = message.loading;\n          } else if (request.readyState === 4 && request.status == 200) {\n            statusMessage.innerHTML = message.success;\n          } else {\n            statusMessage.innerHTML = message.error;\n          }\n        });\n        input.forEach(item => {\n          item.value = \"\";\n        });\n      });\n    };\n    submitForm(formPromo);\n    submitForm(formModal);\n  });\n}\n\n\n//# sourceURL=webpack://template_gulp_webp/./src/js/form.js?");
+
+/***/ }),
+
 /***/ "./src/js/index.js":
 /*!*************************!*\
   !*** ./src/js/index.js ***!
@@ -16,40 +27,29 @@
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _module1_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./module1.js */ \"./src/js/module1.js\");\n/* harmony import */ var _module2_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./module2.js */ \"./src/js/module2.js\");\n/* harmony import */ var _module3_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./module3.js */ \"./src/js/module3.js\");\n\n\n\n\n(0,_module1_js__WEBPACK_IMPORTED_MODULE_1__.firstModule)();\n(0,_module2_js__WEBPACK_IMPORTED_MODULE_2__.secondModule)();\n(0,_module3_js__WEBPACK_IMPORTED_MODULE_3__.thirdModule)();\n\n//# sourceURL=webpack://template_gulp_webp/./src/js/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _promo_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./promo.js */ \"./src/js/promo.js\");\n/* harmony import */ var _modal_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modal.js */ \"./src/js/modal.js\");\n/* harmony import */ var _form_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./form.js */ \"./src/js/form.js\");\n\n\n\n\n(0,_promo_js__WEBPACK_IMPORTED_MODULE_1__.getPromo)();\n(0,_modal_js__WEBPACK_IMPORTED_MODULE_2__.getModal)();\n(0,_form_js__WEBPACK_IMPORTED_MODULE_3__.getForm)();\n\n//# sourceURL=webpack://template_gulp_webp/./src/js/index.js?");
 
 /***/ }),
 
-/***/ "./src/js/module1.js":
-/*!***************************!*\
-  !*** ./src/js/module1.js ***!
-  \***************************/
+/***/ "./src/js/modal.js":
+/*!*************************!*\
+  !*** ./src/js/modal.js ***!
+  \*************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   firstModule: () => (/* binding */ firstModule)\n/* harmony export */ });\nfunction firstModule() {\n  window.addEventListener(\"DOMContentLoaded\", function () {\n    console.log(\"Hellow world\");\n  });\n}\n\n\n//# sourceURL=webpack://template_gulp_webp/./src/js/module1.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   getModal: () => (/* binding */ getModal)\n/* harmony export */ });\nfunction getModal() {\n  window.addEventListener(\"DOMContentLoaded\", function () {\n    let modal = this.document.querySelector(\".modal__overlay\"),\n      close = this.document.querySelectorAll(\".modal__close\"),\n      messageBox = this.document.querySelector(\".modal__success\"),\n      modalWindow = this.document.querySelector(\".modal\"),\n      buttons = this.document.querySelectorAll(\".j-button\");\n    function showModal() {\n      buttons.forEach(item => {\n        item.addEventListener(\"click\", function () {\n          modal.style.display = \"block\";\n          modalWindow.style.display = \"block\";\n          document.body.classList.add(\"modal-open\");\n        });\n      });\n    }\n    showModal();\n    function closeModal() {\n      close.forEach(item => {\n        item.addEventListener(\"click\", function () {\n          modal.style.display = \"none\";\n          messageBox.style.display = \"none\";\n          document.body.classList.remove(\"modal-open\");\n        });\n      });\n      modal.addEventListener(\"click\", function (e) {\n        if (e.target == modal) {\n          modal.style.display = \"none\";\n          messageBox.style.display = \"none\";\n          document.body.classList.remove(\"modal-open\");\n        }\n      });\n    }\n    closeModal();\n  });\n}\n\n\n/* let modalForm = document.querySelector(\".modal__form\"),\r\n                    modalInput = Array.from (document.querySelectorAll(\"input\")),\r\n                    modalButton = document.querySelector(\".modal__button\"),\r\n                    modalPolicy = document.querySelector(\".modal__confidential\"),\r\n                    modalWindow = e.target.closest(\".modal\"); */\n\n/* if(e.target !== modalWindow && e.target !== modalForm && e.target !== modalInput && e.target !== modalButton && e.target !== modalPolicy)     */\n\n//# sourceURL=webpack://template_gulp_webp/./src/js/modal.js?");
 
 /***/ }),
 
-/***/ "./src/js/module2.js":
-/*!***************************!*\
-  !*** ./src/js/module2.js ***!
-  \***************************/
+/***/ "./src/js/promo.js":
+/*!*************************!*\
+  !*** ./src/js/promo.js ***!
+  \*************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   secondModule: () => (/* binding */ secondModule)\n/* harmony export */ });\nfunction secondModule() {\n  window.addEventListener(\"DOMContentLoaded\", function () {\n    console.log(\"Hellow world\");\n  });\n}\n\n\n//# sourceURL=webpack://template_gulp_webp/./src/js/module2.js?");
-
-/***/ }),
-
-/***/ "./src/js/module3.js":
-/*!***************************!*\
-  !*** ./src/js/module3.js ***!
-  \***************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   thirdModule: () => (/* binding */ thirdModule)\n/* harmony export */ });\nfunction thirdModule() {\n  window.addEventListener(\"DOMContentLoaded\", function () {\n    console.log(\"Hellow world\");\n  });\n}\n\n\n//# sourceURL=webpack://template_gulp_webp/./src/js/module3.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   getPromo: () => (/* binding */ getPromo)\n/* harmony export */ });\nfunction getPromo() {\n  window.addEventListener(\"DOMContentLoaded\", function () {\n    let menuItem = this.document.querySelectorAll(\".header__item\"),\n      hamburger = this.document.querySelector(\".header__hamburger\"),\n      menu = this.document.querySelector(\".header__nav\"),\n      close = this.document.querySelector(\".header__close\"),\n      promoOverlay = this.document.querySelector(\".promo__overlay\");\n    menuItem.forEach(function (item) {\n      item.addEventListener(\"click\", function () {\n        for (let i = 0; i < menuItem.length; i++) {\n          menuItem[i].classList.remove(\"header__item_active\");\n          this.classList.add(\"header__item_active\");\n        }\n      });\n    });\n    function setNav() {\n      hamburger.addEventListener(\"click\", () => {\n        menu.classList.toggle(\"header__nav_active\");\n        promoOverlay.style.display = \"block\";\n      });\n      let closeMenu = function (closeItem) {\n        closeItem.addEventListener(\"click\", () => {\n          if (menu.classList.contains(\"header__nav_active\")) {\n            menu.classList.remove(\"header__nav_active\");\n          }\n          promoOverlay.style.display = \"none\";\n        });\n      };\n      closeMenu(close);\n      closeMenu(promoOverlay);\n    }\n    setNav();\n  });\n}\n\n\n//# sourceURL=webpack://template_gulp_webp/./src/js/promo.js?");
 
 /***/ }),
 

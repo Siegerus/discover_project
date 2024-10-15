@@ -1,9 +1,9 @@
 import _ from 'lodash';
 
-import { firstModule } from "./module1.js";
-import { secondModule } from "./module2.js";
-import { thirdModule } from "./module3.js";
+import { getPromo } from "./promo.js";
+import { getModal } from "./modal.js";
+import { getForm } from "./form.js";
 
-firstModule();
-secondModule();
-thirdModule();
+getPromo();
+getModal();
+getForm();
