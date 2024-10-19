@@ -1,0 +1,57 @@
+.our-team {
+    padding-bottom: 70px;
+    background-color: #191b29;
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 200px 624px;
+        grid-template-rows: auto;
+        grid-auto-rows: auto;
+        column-gap: 40px;
+        row-gap: 30px;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        margin-top: 44px;
+    }
+
+    &__avatar {
+        width: 200px;
+        height: 200px;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__item {
+        padding: 25px 10px;
+    }
+
+    &__headline {
+        font-size: 25px;
+        font-weight: 500;
+        line-height: 1.33;
+        color: #fff;
+    }
+
+    &__body {
+        margin-top: 15px;
+        line-height: 130%;
+        font-weight: 300;
+        color: #fff;
+    }
+
+    &__social {
+        display: flex;
+        align-items: center;
+        margin-top: 23px;
+    }
+
+    &__icon {
+        width: 30px;
+        height: 30px;
+        margin-right: 15px;
+    }
+}

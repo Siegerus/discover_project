@@ -26,12 +26,14 @@
     }
 
     &__menu {
+        z-index: 15;
         display: flex;
         align-items: flex-start;
         list-style-type: none;
     }
 
     &__item {
+        display: block;
         padding: 13px 24px 13px 23px;
         font-size: 18px;
         font-weight: 500;

@@ -1,7 +1,17 @@
 .animation {
     &__type__fade {
-        animation-duration: 0.6s;
+        animation-duration: 1.5s;
         animation-name: fade;
+    }
+
+    &__type__hide {
+        animation-duration: 0.8s;
+        animation-name: hide;
+    }
+
+    &__type__slide {
+        animation-duration: 1.3s;
+        animation-name: slide;
     }
 }
 
@@ -14,3 +24,33 @@
         opacity: 1;
     }
 }
+
+@keyframes hide {
+    from {
+        opacity: 1;
+    }
+    
+    to {
+        opacity: 0.1;
+    }
+}
+
+@keyframes slide {
+    0% {
+        transform: rotate(0deg);
+        opacity: 0.1;
+        width: 20%;
+    }
+
+    50% {
+        width: 70%;
+    }
+
+
+    100% {
+        transform: rotate(1440deg);  
+        opacity: 1;
+        width: 100%;
+    }
+}
+

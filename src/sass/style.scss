@@ -17,6 +17,7 @@ a {
     font-family: "Roboto", sans-serif;
     padding: 0;
     margin: 0;
+    /* scroll-behavior: smooth; */
 }
 
 .container {
@@ -24,6 +25,13 @@ a {
     margin: 0 auto;
 }
 
+.hide {
+    display: none;
+}
+
+.fade {
+    display: block;
+}
 
 
 @import "blocks/promo";
@@ -35,8 +43,13 @@ a {
 @import "blocks/footer";
 @import "blocks/title";
 @import "blocks/modal";
+@import "blocks/about";
+@import "blocks/our-team";
+@import "blocks/contact";
+@import "blocks/portfolio";
 @import "blocks/button";
 @import "blocks/input";
 @import "blocks/logo";
+@import "blocks/policy";
 @import "blocks/animation";
 @import "blocks/media";

@@ -1,90 +1,87 @@
+import validator from "validator";
+
 function getForm() {
-    window.addEventListener("DOMContentLoaded", function () {
+    if (document.querySelector(".feed-form")) {
+        window.addEventListener("DOMContentLoaded", function () {
 
-        let message = {
-            "loading" : "Sending data...",
-            "success" : "Thank's, we will get back to you!",
-            "error" : "Something went wrong..."
-        }
-        
-        let formPromo = this.document.getElementById("promo-form"),
-            input = Array.from(document.getElementsByTagName("input")),
-            formModal = this.document.getElementById("modal-form"),
-            statusMessage = this.document.createElement("div"),
-            overlay = this.document.querySelector(".modal__overlay"),
-            modalWindow = this.document.querySelector(".modal"),
-            messageBox = this.document.querySelector(".modal__success");
+            let message = {
+                "loading": "Sending data...",
+                "success": "Thank's, we will get back to you!",
+                "error": "Something went wrong...",
+                "wait": "Please wait..",
+                "emailError" : "Incorrect Email"
+            }
 
-            statusMessage.classList.add("modal__message");
-        
-        
+            let form = this.document.querySelectorAll(".feed-form"),
+                statusMessage = this.document.createElement("div"),
+                overlay = this.document.querySelector(".modal__overlay"),
+                modalWindow = this.document.querySelector(".modal"),
+                messageBox = this.document.querySelector(".modal__success");
 
+                statusMessage.classList.add("modal__message");
+            
 
-        let submitForm = function(form) {
-            form.addEventListener("submit", function(e) {
-                e.preventDefault();
-                
-                overlay.style.display = "block";
-                messageBox.style.display = "block";
-                modalWindow.style.display = "none";
-                messageBox.appendChild(statusMessage);
-                statusMessage.innerHTML = message.loading;
+            let submitForm = function (form) {
+                form.forEach(function (item, i) {
+                    item.addEventListener("submit", function (e) {
+                        e.preventDefault();
 
-                let request = new XMLHttpRequest();
+                            overlay.style.display = "block";
+                            messageBox.style.display = "block";
+                            modalWindow.style.display = "none";
+                            messageBox.appendChild(statusMessage);
+                            statusMessage.innerHTML = message.wait;
 
-                let sendFirstRequest = function(form) {
-                    let requestF = new XMLHttpRequest();
-                    requestF.open("POST", "../php/telegram/telegram.php", true);
-                    let formData = new FormData(form);
-                    requestF.send(formData);
-                }
-                sendFirstRequest(form);
+                            let formData = new FormData(form[i]);
 
-                
+                            let sendFirstRequest = function () {
+                                let requestFirst = new XMLHttpRequest();
+                                requestFirst.open("POST", "../php/telegram/telegram.php");
+                                requestFirst.send(formData);
 
-                let sendSecondRequest = function(form) {
-                    let requestS = new XMLHttpRequest();
-                    requestS.open("POST", "../php/smart.php", true);
-                    let formData = new FormData(form);
-                    requestS.send(formData);
-                }
-                sendSecondRequest(form);
-                
-                /* request.open("POST", "../php/telegram/telegram.php"); */
-                /* request.open("POST", "../php/smart.php"); */
-                
-                /* let formData = new FormData(form);
-                request.send(formData); */
+                                requestFirst.addEventListener("readystatechange", function () {
+                                    if (requestFirst.readyState === 4 && requestFirst.status == 200) {
+                                        let sendSecondRequest = function () {
+                                            let requestSecond = new XMLHttpRequest();
+                                            requestSecond.open("POST", "../php/smart.php");
+                                            requestSecond.send(formData);
 
-                /* let submitMultiple = function(form) {
-                    request.open("POST", "../php/smart.php");
-                    let formData = new FormData(form);
-                    request.send(formData);
-        
-                } */
+                                            requestSecond.addEventListener("readystatechange", function () {
+                                                if (requestSecond.readyState < 4) {
+                                                    statusMessage.innerHTML = message.loading;
+                                                } else if (requestSecond.readyState === 4 && requestSecond.status == 200) {
+                                                    statusMessage.innerHTML = message.success;
 
-                request.addEventListener("readystatechange", function() {
-                    if (request.readyState < 4) {
-                        statusMessage.innerHTML = message.loading;
-                    } else if (request.readyState === 4 && request.status == 200) {
-                        statusMessage.innerHTML = message.success;
-                        
-                    } else {
-                        statusMessage.innerHTML = message.error;
-                    }
+                                                } else {
+                                                    statusMessage.innerHTML = message.error;
+                                                }
+                                            });
+                                        }
+
+                                        sendSecondRequest();
+
+                                    } else if (requestFirst.readyState < 4) {
+                                        statusMessage.innerHTML = message.loading;
+                                    } else {
+                                        statusMessage.innerHTML = message.error;
+                                    }
+
+                                    form[i].reset();
+
+                                });
+                            }
+
+                            sendFirstRequest();
+
+                    
+                });
                 });
 
-                input.forEach((item) => {
-                    item.value = "";
+            }
+            submitForm(form);
 
-                }); 
-            });
-        }
-
-        submitForm(formPromo);
-        submitForm(formModal);
-
-    });
+        });
+    }
 }
 
 export { getForm }

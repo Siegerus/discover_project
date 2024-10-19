@@ -11,7 +11,7 @@
 
 .modal {
     position: absolute;
-    z-index: 20;
+    z-index: 15;
     top: 50%;
     left: 50%;
     width: 610px;
@@ -33,7 +33,7 @@
     &__success {
         display: none;
         position: absolute;
-        z-index: 30;
+        z-index: 20;
         top: 50%;
         left: 50%;
         width: 734px;

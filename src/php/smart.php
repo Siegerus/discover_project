@@ -3,6 +3,7 @@
 $pass = $_POST['password'];             
 $email = $_POST['email'];
 $policy = $_POST['policy'];
+$comment = $_POST['comment'];
 
 
 require_once('phpmailer/PHPMailerAutoload.php');        
@@ -30,6 +31,7 @@ $mail->Body    = '
 		<b>Пользователь оставил данные!</b> <br> 
 	Пароль: ' . $pass . ' <br>
     Согласие на обработку данных: ' . $policy . ' <br>
+    Коментарий: ' . $comment . ' <br>
     E-mail: ' . $email . '';
     
 if(!$mail->send()) {

@@ -38,7 +38,7 @@ gulp.task("styles", function (){
 
 gulp.task("watch", function(){
 	gulp.watch(("src/sass/**/*.+(scss|sass)"), gulp.parallel("styles"));
-	gulp.watch("src/*.html").on("all", gulp.parallel("html"));
+	gulp.watch("src/**/*.html").on("all", gulp.parallel("html"));
 	gulp.watch("src/js/**/*.js").on("all", gulp.series("scripts")); 
 	gulp.watch("src/img/**/*").on("all", gulp.parallel("images"));
 	gulp.watch("src/icons/**/*").on("all", gulp.parallel("icons"));
@@ -47,7 +47,7 @@ gulp.task("watch", function(){
 
 
 gulp.task("html", function() {
-	return gulp.src("src/*.html")
+	return gulp.src("src/**/*.html")
 		.pipe(gulp.dest("dist"))
 		.pipe(browserSync.stream());
 });

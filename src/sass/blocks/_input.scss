@@ -1,5 +1,6 @@
 .input {
     padding-left: 22px;
+    padding-right: 22px;
     opacity: 0.5;
     border-radius: 3px;
     border: solid 1px #fff;
@@ -28,5 +29,10 @@
     &_modal {
         margin-bottom: 20px;
         padding: 21px 0 21px 22px;
+    }
+
+    &_contact {
+        height: 50px;
+        margin-bottom: 20px;
     }
 }

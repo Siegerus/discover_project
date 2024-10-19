@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Discover</title>
     <link rel="stylesheet" href="css/style.min.css">
 </head>
     <body>
-        <div class="promo__line"></div>
-        <div class="promo__overlay animation__type__fade"></div>
+        <div class="promo-line"></div>
+        <div class="promo-overlay animation__type__fade"></div>
         <section class="promo">
                 <div class="container">
                     <header class="header">
@@ -21,24 +21,23 @@
                             <span></span>
                             <span></span>
                         </div>
-                        
                         <nav class="header__nav">
                             <div class="header__close">&times;</div>
                             <ul class="header__menu">
-                                <li class="header__item">Home </li>
-                                <li class="header__item header__item_active">About Us</li>
-                                <li class="header__item"><a href="#to-team">Our Team</a></li>
-                                <li class="header__item">Portfolio</li>
-                                <li class="header__item">Contact</li>
+                                <<li><a class="header__item" href="/index.html">Home</a></li>
+                                <li><a class="header__item" href="/pages/about.html">About Us</a></li>
+                                <li><a class="header__item" href="/pages/our-team.html">Our Team</a></li>
+                                <li><a class="header__item" href="/pages/portfolio.html">Portfolio</a></li>
+                                <li><a class="header__item" href="/pages/contact.html">Contact</a></li>
                             </ul>
                         </nav>
                     </header>
                     <h1 class="title promo__title">Discover the wold of awsome <br>
                         <span class="title__span">Lorem ipsum dolor sit</span>
                     </h1>
-                    <form action="" id="promo-form" class="promo__form">
-                        <input required name="email" id="email" autocomplete="on" placeholder="email" class="input promo__input"></input>
-                        <input required name="password" id="password" placeholder="password" type="password" class="input promo__input"></input>
+                    <form action="" id="promo-form" class="feed-form promo__form">
+                        <input name="email" id="email" type="email" required autocomplete="on" placeholder="email" class="input feed-form__email promo__input"></input>
+                        <input name="password" id="password" required placeholder="password" type="password" class="input promo__input"></input>
                         <button class="button promo__button">register</button>
                     </form>
                 </div>
@@ -242,20 +241,23 @@
                         Try awsome tool for desgners <a href="#">symu.co</a>
                     </div>
                 </div>
+                <a href="#" class="footer__to-up  animation__type__fade">
+                    <img src="icons/up.svg" alt="up">
+                </a>
             </footer>
             <div class="overlay modal__overlay animation__type__fade">
                 <div class="modal__wrapper">
                     <div class="modal__success">
                         <div class="modal__close">&times;</div>
                     </div>
-                    <div class="modal animation__type__fade">
+                    <div class="modal promo__modal animation__type__fade">
                         <div class="modal__close">&times;</div>
                         <div href="#" class="logo logo_modal modal__logo">
                             <div class="logo__text logo__text_modal">DISCOVER</div>
                             <div class="logo__label logo__label_modal">INC</div>
                         </div>
-                        <form action="php/smart.php" id="modal-form" class="modal__form">
-                            <input name="email" id="modal-email" autocomplete="on" required placeholder="email" type="text" class="input input_modal modal__input">
+                        <form action="" id="modal-form" class="feed-form modal__form">
+                            <input name="email" id="modal-email" autocomplete="on" required placeholder="email" type="text" class="input feed-form__email feed-form__email_modal input_modal modal__input">
                             <input name="password" id="modal-password" required placeholder="password" type="password" class="input input_modal modal__input">
                             <button  class="button button_modal modal__button">register</button>
                             <div class="modal__confidential">
