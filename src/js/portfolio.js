@@ -45,7 +45,6 @@ function getPortfolio () {
         let width = document.documentElement.clientWidth,
             img = Array.from(document.getElementsByTagName("img"));
 
-            console.log(img);
 
         if(width <= 576 ) {
             img.forEach((item) => {
